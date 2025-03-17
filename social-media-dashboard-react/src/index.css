@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Colors */
+  /* Primary colors */
+  --color-primary-yellow: hsl(37, 97%, 70%);
+  --color-primary-pink: hsl(329, 70%, 58%);
+  --color-primary-scarlet: hsl(356, 69%, 56%);
+  --color-primary-red: hsl(348, 97%, 39%);
+  
+  --color-primary-turquoise: hsl(163, 72%, 41%);
+  --color-primary-turquoise-light: hsl(146, 68%, 55%);
+
+  --color-primary-blue: hsl(208, 92%, 53%);
+  --color-primary-blue-light: hsl(203, 89%, 53%);
+  --color-primary-blue-grayish: hsl(210, 78%, 56%);
+
+  /* Light theme primary colors */
+  --color-primary-gray: hsl(230, 22%, 74%);
+
+  /* Neutral */
+  /* Light theme (only) */
+  --color-neutral-white-pale: hsl(225, 100%, 98%);
+  --color-neutral-blue-light-grayish: hsl(227, 47%, 96%);
+  --color-neutral-blue-dark-grayish: hsl(228, 12%, 44%);
+
+  /* Dark theme (only) */
+  --color-neutral-blue-grayish-desaturated: hsl(228, 34%, 66%);
+  --color-neutral-blue-dark-desaturated: hsl(228, 28%, 20%);
+  --color-neutral-blue-dark: hsl(232, 19%, 15%);
+
+  /* Shared */
+  --color-neutral-blue-darker: hsl(230, 17%, 14%);
+  --color-neutral-white: hsl(0, 0%, 100%);
+  
+  /* Font settings */
+  /* Typography */
+  --font-body: "Inter", serif;
+
+  /* Size */
+  --text-base: 14px;
+}

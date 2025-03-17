@@ -1,0 +1,74 @@
+[
+    {
+        "id": "overview-1",
+        "type": "Page Views",
+        "logo": "/images/icon-facebook.svg",
+        "amount": 87,
+        "today_change": 3,
+        "increased": true,
+        "platform": "Facebook"
+    },
+    {
+        "id": "overview-2",
+        "type": "Likes",
+        "logo": "/images/icon-facebook.svg",
+        "amount": 52,
+        "today_change": 2,
+        "increased": false,
+        "platform": "Facebook"
+    },
+    {
+        "id": "overview-3",
+        "type": "Likes",
+        "logo": "/images/icon-instagram.svg",
+        "amount": 5462,
+        "today_change": 2257,
+        "increased": true,
+        "platform": "Instagram"
+    },
+    {
+        "id": "overview-4",
+        "type": "Profile Views",
+        "logo": "/images/icon-instagram.svg",
+        "amount": 52000,
+        "today_change": 1375,
+        "increased": true,
+        "platform": "Instagram"
+    },
+    {
+        "id": "overview-5",
+        "type": "Retweets",
+        "logo": "/images/icon-twitter.svg",
+        "amount": 117,
+        "today_change": 303,
+        "increased": true,
+        "platform": "Twitter"
+    },
+    {
+        "id": "overview-6",
+        "type": "Likes",
+        "logo": "/images/icon-twitter.svg",
+        "amount": 507,
+        "today_change": 553,
+        "increased": true,
+        "platform": "Twitter"
+    },
+    {
+        "id": "overview-7",
+        "type": "Likes",
+        "logo": "/images/icon-youtube.svg",
+        "amount": 107,
+        "today_change": 19,
+        "increased": false,
+        "platform": "YouTube"
+    },
+    {
+        "id": "overview-8",
+        "type": "Total Views",
+        "logo": "/images/icon-youtube.svg",
+        "amount": 1407,
+        "today_change": 12,
+        "increased": false,
+        "platform": "YouTube"
+    }
+]
