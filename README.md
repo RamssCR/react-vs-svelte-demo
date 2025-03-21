@@ -155,6 +155,77 @@ Svelte maneja la sintaxis nativa de HTML pero reorganizada de la siguiente forma
 </style>
 ```
 
+### Retornar elementos hermanos
+React, por convención, solo te deja retornar un solo elemento padre por componente, si deseas retornar más de
+un elemento sin envolverlo en un elemento padre, debes usar los React Fragments (o `<></>`) para lograr dicho
+cometido.
+```JSX
+// ❌ Forma incorrecta
+return (
+    <h1>Elemento 1</h1>
+    <h2>Elemento 2</h2> {/* Lanza error porque se está retornando más de un elemento */}
+)
+
+// ✅ Forma correcta
+return (
+    <>
+        <h1>Elemento 1</h1>
+        <h2>Elemento 2</h2>
+    </>
+)
+```
+
+En Svelte, por otro lado, si deseas retornar más de un elemento padre, puedes hacerlo sin necesidad de utilizar
+intermediarios como los React Fragments.
+```SVELTE
+<script>
+    // scripts
+</script>
+
+<!-- Funciona sin lanzar errores -->
+<h1>Elemento 1</h1>
+<h2>Elemento 2</h2>
+```
+
+### Data Binding
+El **Data Binding** es el mecanismo que sincroniza los datos entre la interfaz de usuario (UI) y la lógica de la
+aplicación (estado). En pocas palabras, es cómo los cambios en una variable afectan lo que se muestra en la pantalla
+y viceversa.
+
+Los más usados en librerías de JS son:
+1. **One-way Data Binding (Unidireccional):** La UI solo lee o solo escribe los datos.
+2. **Two-way Data Binding (Bidireccional):** La UI y el estado se actualizan mutuamente en tiempo real.
+
+| Característica   | React                                         | Svelte                                          |
+|------------------|-----------------------------------------------|-------------------------------------------------|
+| Unidireccional   | Usa `useState`, `useReducer`, `useContext`    | Variables normales, runas y stores (`$store`)   |
+| Bidireccional    | No es nativo, se necesita `onChange`          | Nativo con `bind:value`                         |
+
+#### Ejemplo con React
+```JSX
+function Sheet() {
+    const [text, setText] = useState('')
+    const handleChange = (e) => setText(e.target.value)
+
+    return (
+        <>
+            <p>{text}</p>
+            <input type="text" value={text} onChange={handleChange} />
+        </>
+    )
+}
+```
+
+#### Ejemplo con Svelte
+```SVELTE
+<script>
+    let text = $state('')
+</script>
+
+<p>{text}</p>
+<input type="text" bind:value={text} />
+```
+
 ### Soporte a TypeScript
 Si necesitas crear un proyecto de Svelte con TypeScript, si usas archivos con extensión `.svelte` únicamente,
 puedes indicarle a la etiqueta `<script>` que el lenguage del componente será TypeScript mediante el atributo 
