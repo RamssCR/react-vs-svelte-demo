@@ -249,6 +249,22 @@ Si manejas Vite como empaquetador web para proyectos con librerías de JS (en es
 y necesitas manejar un framework de CSS como lo es TailwindCSS, por ejemplo, puedes instalarlo de la misma
 forma que harías en un proyecto tradicional de React + Vite.
 
+### Comunidad menos grande que la comunidad de React
+Svelte, al ser un framework muy reciente, carece de muchas cosas que React ha logrado conseguir desde su
+creación. Si bien, es cierto que ambos frameworks han evolucionado a tal punto de que Svelte adoptó la
+reactividad explícita (como React) y React adoptó un compilador para solucionar mucho boilerplate que
+Svelte solucionaba gracias a adaptar un compilador desde el principio, React sigue dominando el mercado
+de librerías JS por mucho, es la tecnología principal que encontrarás en cualquier oferta de trabajo y,
+a nivel general, es la librería que ha abarcado gran parte del internet recientemente.
+
+No está demás decir que muchas empresas están inclusiven dejando de usar meta-frameworks como Next.js o
+Remix para centrar sus desarrollos puramente con React y algún framework backend como Express o NestJS.
+
+Sin embargo, Svelte no necesita realmente quedarse atrás, siendo una de las posibilidades expandir su
+uso a más personas, más proyectos, más empresas. En este caso, Svelte se puede dar una oportunidad de ser
+probado y apoyado para futuros desarrollos, permitiendo que dicha librería pueda ser más conocida y obtener
+más público que pueda mejorar su ecosistema de la misma forma que React.
+
 ### Performance (o rendimiento)
 A diferencia de React, el cual cual utiliza Virtual DOM (o mejor conocido como VDOM) para realizar
 cambios de estado (por ejemplo) al DOM real, Svelte compila directamente los cambios de estado a
