@@ -377,6 +377,13 @@ uso a más personas, más proyectos, más empresas. En este caso, Svelte se pued
 probado y apoyado para futuros desarrollos, permitiendo que dicha librería pueda ser más conocida y obtener
 más público que pueda mejorar su ecosistema de la misma forma que React.
 
+### Documentación muy explícita y detallada
+La documentación de Svelte y SvelteKit es una de las documentaciones más detalladas y fáciles de entender:
+Es sencilla, explica sus funcionalidades de forma detallada y entendible para personas que entren por primera
+vez a usar la librería.
+
+He aquí la documentación de la librería: [check-svelte](https://svelte.dev)
+
 ### Performance (o rendimiento)
 A diferencia de React, el cual cual utiliza Virtual DOM (o mejor conocido como VDOM) para realizar
 cambios de estado (por ejemplo) al DOM real, Svelte compila directamente los cambios de estado a
