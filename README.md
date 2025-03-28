@@ -187,6 +187,118 @@ intermediarios como los React Fragments.
 <h2>Elemento 2</h2>
 ```
 
+### Pasar componentes hijos como parámetro (o children components)
+React tiene una forma simple de crear componentes hijos, mediante el parámetro `children`, de esta forma:
+
+```JSX
+function BigComponent({ children }) {
+    return (
+        <div>
+            {children}
+        </div>
+    )
+}
+```
+
+Simplemente se pasa el artributo dentro de una etiqueta que forme parte de dicho componente, puede ser un `div`, `section`,
+`article`, `p`, `h1-h6`, etc... o incluso puede ser otro componente de React.
+
+```JSX
+<BigComponent>
+    <SmallComponent />
+</BigComponent>
+```
+
+Svelte, previo a la versión 5, utilizaba una etiqueta `<slot />`, implementada en la versión 4, que permite hacer lo mismo que 
+el `children` de React.
+
+llamemos dicho componente `Modal`...
+```SVELTE
+<div>
+    <slot />
+    <!-- o también puedes usar <slot></slot> -->
+</div>
+```
+
+Implementando `Modal` en otro componente...
+```SVELTE
+<script>
+    import Modal from './Modal.svelte'
+</script>
+
+<Modal>
+    Aquí va el contenido hijo del componente
+    <h1>Esta es una etiqueta HTML de texto de cabezera</h1>
+</Modal>
+```
+
+En Svelte 5, se reemplazó la etiqueta `<slot />` por un nuevo concepto: Los Snippets.
+
+Los Snippets vendrían a ser dicho código reutilizable que Svelte se encarga de renderizar. Dichos
+Snippets se pueden usar de diferentes formas, por ejemplo:
+
+Esta es la forma básica de crear un Snippet:
+
+```SVELTE
+{#snippet mySnippet()}
+    <div>
+        <p>Un Snippet reutilizable</p>
+    </div>
+{/snippet}
+```
+
+Para renderizar un Snippet, debes usar la directiva `{@render snippet()}`
+
+```SVELTE
+{@render mySnippet()}
+```
+
+Si quieres pasarle parámetros al snippet:
+
+```SVELTE
+{#snippet displayName(name)}
+    <h1>Mi nombre es {name}</h1>
+{/snippet}
+
+{@render diplayName("Carlos")}
+```
+
+También acepta objetos y arrays...
+
+```SVELTE
+{#snippet figure(image)}
+	<figure>
+		<img src={image.src} alt={image.caption} width={image.width} height={image.height} />
+		<figcaption>{image.caption}</figcaption>
+	</figure>
+{/snippet}
+
+{@render figure(image)}
+```
+
+Ahora, para usar Snippet como reemplazo a `<slot />` se hace lo siguiente:
+```SVELTE
+<script>
+    let { children } = $props()
+</script>
+
+<div>
+    {@render children?.()}
+</div>
+```
+
+En este caso, el prop `children` es de tipo `Snippet` y se renderiza en el componente como elemento hijo.
+```SVELTE
+<script>
+    import Modal from './Modal.svelte'
+</script>
+
+<Modal>
+    Este es un snippet de Svelte
+    <h1>Con etiquetas</h1>
+</Modal>
+```
+
 ### Data Binding
 El **Data Binding** es el mecanismo que sincroniza los datos entre la interfaz de usuario (UI) y la lógica de la
 aplicación (estado). En pocas palabras, es cómo los cambios en una variable afectan lo que se muestra en la pantalla
